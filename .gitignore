@@ -1,0 +1,6 @@
+#Git Ignore Configuration for PrimeTest-PoSh
+#
+#
+#
+#Ignore Any Temporary Powershell Studio .ps1 files of the format XXXXXXX.TempPoint.ps1
+**.TempPoint.ps1
