@@ -75,40 +75,53 @@ function Test-IsNumberPrime
 
 
 
-function Get-PrimeNumber
-{
-	<#
+<#
 	.SYNOPSIS
-		Tests a range of numbers for the presence of prime numbers.
+		Tests a range of numbers for the existance of primes.
 	
 	.DESCRIPTION
-		This function takes a range of numbers and tests each number to see if it is a prime number.   Any identified prime numebrs will be returned by the function.
+		This functions tests each number in a range of number for the presence of primes and returns an array of all the prime numbers contained within the range.
 	
 	.PARAMETER Minimum
-		The lowest number that should be tested to see if it is a prime numebr.
+		This is lower boundry of the range of numbers that should be tested for the existance of primes.
 	
 	.PARAMETER Maximum
-		The highest number that should be tested to see if it is a prime number.
+		This is the upper boundry of the range of numbers that should be tested for the existence of primes.
 	
 	.EXAMPLE
 				PS C:\> Get-PrimeNumber
 	
+	.OUTPUTS
+		array
+	
 	.NOTES
 		Additional information about the function.
-	#>
-	
-	[CmdletBinding()]
+#>
+function Get-PrimeNumber
+{
+	[CmdletBinding(DefaultParameterSetName = 'MinMax')]
+	[OutputType([array], ParameterSetName = 'MinMax')]
 	[OutputType([array])]
 	param
 	(
-		[Parameter(Position = 0)]
-		[Integer]$Minimum = 1,
-		[Parameter(Position = 1)]
+		[Parameter(ParameterSetName = 'MinMax',
+				   Position = 0)]
 		[ValidateNotNullOrEmpty()]
-		[Integer]$Maximum
+		[System.Int64]$Minimum = 1,
+		[Parameter(ParameterSetName = 'MinMax',
+				   Position = 1)]
+		[ValidateNotNullOrEmpty()]
+		[System.Int64]$Maximum = 1000
 	)
 	
-	#TODO: Place script here
+	switch ($PsCmdlet.ParameterSetName)
+	{
+		'MinMax' {
+			#TODO: Place script here
+			break
+		}
+	}
+	
 }
 
 
