@@ -20,7 +20,7 @@ function Test-IsNumberPrime
 		Tests whether a number is a prime number.
 	
 	.DESCRIPTION
-		This function takes an integer as input and will test that integer to see if it is a prime number and return a boolean result.   If the number is only divisable by 1 and itself, the return result will be True meaning the number is a prime number.
+		This function takes an integer as input and will test that integer to see if it is a prime number and return a [boolean] result.
 	
 	.PARAMETER Number
 		This is the number that should be tested to see if it is a prime number.
@@ -29,7 +29,8 @@ function Test-IsNumberPrime
 				PS C:\> Test-IsNumberPrime -Number $value1
 	
 	.NOTES
-		Additional information about the function.
+		If the integer passed to Test-IsNumberPrime is only divisible by 1 and itself, the this function returns true because this is a prime number.
+		If the integer passed to Test-IsNumberPrime is divisible by any other number, this function returns false because it is not a prime numnber.
 	#>
 	[CmdletBinding()]
 	[OutputType([boolean])]
