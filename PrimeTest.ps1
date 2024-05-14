@@ -13,7 +13,7 @@
 #>
 
 
-function Test-IsNumberPrime
+function Test-PrimeNumber
 {
 	<#
 	.SYNOPSIS
@@ -26,11 +26,11 @@ function Test-IsNumberPrime
 		This is the number that should be tested to see if it is a prime number.
 	
 	.EXAMPLE
-				PS C:\> Test-IsNumberPrime -Number $value1
+				PS C:\> Test-PrimeNumber -Number $value1
 	
 	.NOTES
-		If the integer passed to Test-IsNumberPrime is only divisible by 1 and itself, the this function returns true because this is a prime number.
-		If the integer passed to Test-IsNumberPrime is divisible by any other number, this function returns false because it is not a prime numnber.
+		If the integer passed to Test-PrimeNumber is only divisible by 1 and itself, the this function returns true because this is a prime number.
+		If the integer passed to Test-PrimeNumber is divisible by any other number, this function returns false because it is not a prime numnber.
 	#>
 	[CmdletBinding()]
 	[OutputType([boolean])]
@@ -75,7 +75,10 @@ function Test-IsNumberPrime
 
 
 
-<#
+
+function Get-PrimeNumber
+{
+	<#
 	.SYNOPSIS
 		Tests a range of numbers for the existance of primes.
 	
@@ -97,8 +100,7 @@ function Test-IsNumberPrime
 	.NOTES
 		Additional information about the function.
 #>
-function Get-PrimeNumber
-{
+	
 	[CmdletBinding(DefaultParameterSetName = 'MinMax')]
 	[OutputType([array], ParameterSetName = 'MinMax')]
 	[OutputType([array])]
@@ -117,7 +119,19 @@ function Get-PrimeNumber
 	switch ($PsCmdlet.ParameterSetName)
 	{
 		'MinMax' {
-			#TODO: Place script here
+			#Begin Processing of Get-PrimeNumber Call Using MinMax Parameter Set
+			$IdentifiedPrimeNumbers = @()
+			#Begin for loop to process each number between the minimum and maximum parameters
+			For ($i = $Minimum; $i -ile $Maximum; $i++)
+			{
+				$TestResult = Test-PrimeNumber -Number $i
+				if ($TestResult -eq $true)
+				{
+					$IdentifiedPrimeNumbers += $i
+				}
+			}
+			
+			return $IdentifiedPrimeNumbers
 			break
 		}
 	}
