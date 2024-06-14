@@ -1,20 +1,14 @@
 # PrimeTest-Posh  
 
-This is a powershell based version of my simple project for students to 
+## Get-PrimeNumber.ps1
+
+This is a Powershell based version of my simple project for students to 
 develop a Powershell script that contains a function which will evaluate a 
 range of numbers for the presence of prime numbers.   
 
-The PrimeTest.ps1 script loads 2 functions into memory when it is executed.
-The first function is Test-PrimeNumber which accepts an integer as a parameter
-and then tests the supplied number to see if it is a prime number or not.  The
-second funciton is Get-PrimeNumber which, as of now, has one parameter set which
-accepts 2 integers, Minimum and Maximum.   The function then tests every number 
-between the minimum and maximum numbers to see if they are prime numbers.   This
-function returns an array that contains all identified prime numbers.
+The primary program produced by this project is a script entitled Get-PrimeNumber.ps1.   This script accepts 2 parameters...
+    -Minimum (This is the lower end of the range of numbers to be tested.  Default=1)
+    -Maximum (This is the high end of the range of numbers to be tested.  Mandatory.)
+    
+Once you have specified a maximum or and minimum/maximum, the script will then go and test each number in the range to see if it is a prime number.   Once all the numbers have been tested, an array will be returned that contains all of the prime numbers identified.
 
-In a new branch, I will work on refactoring this code so it can be properly executed as 
-a Script by passing arguments to the script at run time.   I will also add reasonably 
-descriptive help to the script, so anyway can easily learn how to execute it to get the
-results they require.  These changes are being made because when I spoke with powershell 
-gurus, most often they agreed that this program would run & deploy most effectively, 
-while also being more easy for a new user to learn it's fundamentals, as a script.

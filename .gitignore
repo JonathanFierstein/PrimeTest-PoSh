@@ -2,5 +2,8 @@
 #
 #
 #
-#Ignore Any Temporary Powershell Studio .ps1 files of the format XXXXXXX.TempPoint.ps1
+#Ignore Any Temporary Powershell Studio .ps1 files of the format XXXXXXX.TempPoint.*
 **.TempPoint.ps1
+**.TempPoint.gitignore
+#Ignore any backup files created by GhostWriter Markdown Editing Platform
+*.backup

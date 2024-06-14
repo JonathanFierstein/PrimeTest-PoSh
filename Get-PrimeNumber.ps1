@@ -15,13 +15,15 @@
 		Array
 	
 	.NOTES
-		===========================================================================
-		Created with: 	SAPIEN Technologies, Inc., PowerShell Studio 2022 v5.8.213
-		Created on:   	6/13/2024 9:37 PM
-		Created by:   	Night
+		================================================================================================
+		Created with: 			SAPIEN Technologies, Inc., PowerShell Studio 2022 v5.8.213
+		Created on:   			6/13/2024 11:357 PM
+		Created by:   			Jonathan Fierstein
 		Organization:
-		Filename:
-		===========================================================================
+		Filename:				Get-PrimeNumber.ps1
+		Repository:				https://github.com/JonathanFierstein/PrimeTest-PoSh
+		Recent Code Changes:	Refactored Code to Function as a Self Contained Script
+		================================================================================================
 #>
 [CmdletBinding(DefaultParameterSetName = 'Minimum',
 			   ConfirmImpact = 'None',
